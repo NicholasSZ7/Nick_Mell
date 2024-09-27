@@ -1,65 +1,71 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    background-color: #1d05ec;
 }
 
-body {
+.card {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
-}
+    flex-direction: column;
 
-.container {
-    text-align: center;
-    border: 2px solid #333;
-    padding: 20px;
-    border-radius: 8px;
+    height: 600px;
+    width: 600px;
+
     background-color: #fff;
-    position: relative; /* Para manter o botão dentro do container */
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
-button {
-    margin: 10px;
-    padding: 10px 20px;
+.card > .question p {
+    font-size: 32px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background-color: #04ee04;
+}
+
+.btn-yes, .btn-no {
+    height: 48px;
+    width: 100px;
+
+    border: none;
+    border-radius: 8px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s ease;
 }
 
-#resposta2:hover {
-    background-color: #f08080;
+
+.btn-yes {
+    background-color: #04ee04;
+    color: #FF4040;
 }
 
-/* Responsividade para telas menores */
-@media (max-width: 600px) {
-    body {
-        height: auto;
-        padding: 20px;
-    }
-
-    .container {
-        width: 100%;
-        padding: 15px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
+.btn-no {
+    background-color: #FF4040;
+    color: #fff;
 }
 
-/* Responsividade para tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
-    .container {
-        width: 80%;
-    }
 
-    button {
-        font-size: 15px;
-        padding: 10px 18px;
-    }
+.answer {
+    display: none;
+}
+
+.answer > p {
+    font-size: 48px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #ff6e6e;
+    text-shadow: 1px 1px #000;
 }
